@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sorry Bubu 💖</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .heart {
+            font-size: 60px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 15px 35px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: #ff4b5c;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff4b5c;
+            color: white;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .floating {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <h1>I'm Sorry Bubu 🥺❤️</h1>
+
+        <p>
+            Dear Abhishek, <br><br>
+            I know sometimes I act like a little drama queen 🙈 <br>
+            But please know one thing… <br><br>
+            You are my favorite human. 🌍💖 <br>
+            My safe place. My comfort. My Bubu. 🫶 <br><br>
+            I never want to hurt you. <br>
+            Even when we fight, I still choose you. Always. ❤️
+        </p>
+
+        <div class="heart">💓</div>
+
+        <button onclick="loveMessage()">Click If You Still Love Your Drama Queen 👑</button>
+    </div>
+
+    <script>
+        function loveMessage() {
+            alert("Hehe I knew it! You can't stay mad at your cutie 😌💕 I love you Bubu foreverrrrr ❤️");
+        }
+
+        // Floating hearts
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "floating";
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 20 + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
